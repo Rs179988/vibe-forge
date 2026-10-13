@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VibeForgeEngineeringLedger",
+  "description": "Silent architectural specification form filled by AI agent during vibe coder discovery.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "tagline": { "type": "string" },
+        "raw_vibe": { "type": "string" }
+      },
+      "required": ["name", "raw_vibe"]
+    },
+    "hardware_budget": {
+      "type": "object",
+      "properties": {
+        "target_devices": { "type": "array", "items": { "type": "string" } },
+        "ram_budget_mb": { "type": "number" },
+        "disk_budget_mb": { "type": "number" },
+        "gpu_requirement": { "type": "string", "enum": ["none", "webgpu", "dedicated_vram", "metal_vulkan"] },
+        "offline_capability": { "type": "string", "enum": ["100_percent_offline", "offline_first_with_sync", "online_only"] }
+      },
+      "required": ["target_devices", "offline_capability"]
+    },
+    "ui_ux_experience": {
+      "type": "object",
+      "properties": {
+        "primary_viewport": { "type": "string" },
+        "interaction_metaphor": { "type": "string" },
+        "target_frame_rate": { "type": "number", "default": 60 }
+      }
+    },
+    "mechanistic_architecture": {
+      "type": "object",
+      "properties": {
+        "frontend_runtime": { "type": "string" },
+        "backend_core": { "type": "string" },
+        "process_model": { "type": "string", "enum": ["single_process", "multi_process_ipc", "client_server"] },
+        "state_management": { "type": "string" },
+        "persistence_layer": { "type": "string" },
+        "sync_protocol": { "type": "string" },
+        "threading_model": { "type": "string" }
+      },
+      "required": ["frontend_runtime", "backend_core", "persistence_layer"]
+    },
+    "live_sota_stack": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "package": { "type": "string" },
+          "version": { "type": "string" },
+          "verified_year": { "type": "number" },
+          "justification": { "type": "string" },
+          "mechanistic_advantage": { "type": "string" }
+        },
+        "required": ["package", "justification"]
+      }
+    },
+    "decision_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "topic": { "type": "string" },
+          "mechanistic_reality": { "type": "string" },
+          "chosen_option": { "type": "string" },
+          "user_rationale": { "type": "string" },
+          "trade_off_accepted": { "type": "string" }
+        },
+        "required": ["topic", "chosen_option", "user_rationale"]
+      }
+    }
+  },
+  "required": ["project", "hardware_budget", "mechanistic_architecture", "decision_history"]
+}
